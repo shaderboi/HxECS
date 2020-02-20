@@ -9,3 +9,4 @@
 #include "Source/Engine/Utils/Memory/MemPool.hpp"
 #include "Source/Engine/ECS/System.hpp"
 #include "Source/Engine/ECS/EntityID.hpp"
+#include "Source/Engine/ECS/EntityManager.hpp"

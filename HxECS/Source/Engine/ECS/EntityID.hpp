@@ -4,7 +4,7 @@
 
 namespace Hx { namespace ECS {
 
-	class EntityID
+	union EntityID
 	{
 	public:
 		EntityID()
@@ -32,32 +32,29 @@ namespace Hx { namespace ECS {
 			return *this;
 		}
 
-		uint32 GetIndex()
+		uint32 GetIndex() const
 		{
 			return this->Index;
 		}
 
-		uint32 GetGeneration()
+		uint32 GetGeneration() const
 		{
 			return this->Generation;
 		}
 
-		uint64 GetID()
+		uint64 GetID() const
 		{
 			return this->ID;
 		}
 
 	private:
-		union
+		struct
 		{
-			struct
-			{
-				uint32 Index = 0;
-				uint32 Generation = 0;
-			};
-
-			uint64 ID = 0;
+			uint32 Index;
+			uint32 Generation;
 		};
+
+		uint64 ID = 0;
 	};
 
 }}

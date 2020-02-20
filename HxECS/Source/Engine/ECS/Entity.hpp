@@ -1,14 +1,17 @@
 #pragma once
 
 #include "Common.hpp"
+#include "EntityID.hpp"
 
 namespace Hx { namespace ECS {
 
 	class EntityManager;
 
-	class Entity
+	struct Entity
 	{
-	public:
+		EntityManager* Manager;
+		EntityID ID;
+
 		Entity() = default;
 
 		Entity(EntityManager* manager, const EntityID& id)
@@ -19,10 +22,6 @@ namespace Hx { namespace ECS {
 		Entity(const Entity&) = default;
 
 		Entity& operator=(const Entity&) = default;
-		
-	private:
-		EntityManager* Manager;
-		EntityID ID;
 	};
 
 }}
