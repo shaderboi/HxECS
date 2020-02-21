@@ -16,4 +16,6 @@ jobs:
         cmake ..
         ls
     - name: Build
-      run: make -j4
+      run: |
+        cd build
+        make -j4
